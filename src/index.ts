@@ -30,4 +30,4 @@ process.on("SIGTERM", async () => {
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
-console.log("Task_MCP is connected successfully.");
+console.error("Task_MCP is connected successfully.");

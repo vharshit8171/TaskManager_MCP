@@ -12,13 +12,13 @@ export async function connectDB(): Promise<void> {
     }
 
     mongoose.connection.on("connected", () => {
-        console.log("Mongoose connected to MongoDB Atlas");
+        console.error("Mongoose connected to MongoDB Atlas");
     });
     mongoose.connection.on("error", (err) => {
         console.error("Mongoose connection error:", err);
     });
     mongoose.connection.on("disconnected", () => {
-        console.log("Mongoose disconnected");
+        console.error("Mongoose disconnected");
     });
 
     await mongoose.connect(uri);
