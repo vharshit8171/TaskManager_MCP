@@ -84,7 +84,7 @@ export const SearchTasksSchema = z.object({
         .describe("Word or phrase to search across title, description and category"),
 });
 
-// plan-my-week prompt
+
 export const PlanMyWeekSchema = z.object({
     available_hours: z
         .string()

@@ -200,9 +200,8 @@ export async function searchTasks(data: SearchTasksData): Promise<string> {
     }
 }
 
-// ─────────────────────────────────────────────────────────────
-//  SUMMARY — used by Resource and daily-briefing Prompt
-// ─────────────────────────────────────────────────────────────
+
+
 export async function getTaskSummary(): Promise<string> {
     try {
         const [total, pending, completed, highPriority, overdue] =
@@ -232,9 +231,7 @@ export async function getTaskSummary(): Promise<string> {
     }
 }
 
-// ─────────────────────────────────────────────────────────────
-//  OVERDUE — used by Resource and daily-briefing Prompt
-// ─────────────────────────────────────────────────────────────
+
 export async function getOverdueTasks(): Promise<string> {
     try {
         const tasks = await Task.find({
@@ -252,9 +249,8 @@ export async function getOverdueTasks(): Promise<string> {
     }
 }
 
-// ─────────────────────────────────────────────────────────────
-//  PENDING LIST — used by Prompts
-// ─────────────────────────────────────────────────────────────
+
+
 export async function getPendingTasks(): Promise<string> {
     return listTasks({ status: "pending" });
 }
